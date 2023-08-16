@@ -1,0 +1,10 @@
+.card-back {
+	position: absolute;
+	top: 7vw;
+	right: 5vw;
+}
+.card-front {
+	position: absolute;
+    top: 30vw;
+    left: 5vw
+}
