@@ -1,10 +1,61 @@
+.card-container {
+	position: relative;
+	top: 3rem;
+	height: 260px;
+	width: 500px;
+	/* margin: 2rem; */
+}
+
 .card-back {
 	position: absolute;
-	top: 7vw;
-	right: 5vw;
+	top: 0;
+	right: 0.4rem;
 }
+.card-back img {
+	width: 65%;
+}
+.card-back-cvc {
+	position: absolute;
+	top: 40%;
+	right: 12%;
+	font-size: 1.6rem;
+}
+
 .card-front {
 	position: absolute;
-    top: 30vw;
-    left: 5vw
+	bottom: 0;
+	left: 0.4rem;
+	letter-spacing: 1px;
+	font-size: 1.6rem;
+}
+.card-front img {
+	width: 65%;
+}
+
+.card-front-logo {
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+}
+
+.card-front-name {
+	position: absolute;
+	bottom: 1rem;
+	left: 1rem;
+}
+.card-front-number {
+	position: absolute;
+	display: block;
+	white-space: nowrap;
+	bottom: 35%;
+	left: 50%;
+	transform: translate(-50%);
+	font-size: 2rem;
+	letter-spacing: 4px;
+}
+
+.card-front-date {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
 }

@@ -1,8 +1,14 @@
 .col-container {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	text-align: left;
+	margin: 0.6rem;
 }
 
-input{
-    width: 100%;
+.col-container input {
+	margin: 0.4rem 0;
+	height: 3rem;
+	border-style: solid;
+	border-radius: 0.6rem;
 }

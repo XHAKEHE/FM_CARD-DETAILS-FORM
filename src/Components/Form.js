@@ -12,8 +12,11 @@ const Form = () => {
 				<Input label='CARD NUMBER'></Input>
 			</div>
 			<div className={classes['row-container']}>
-				<Input label='EXP DATE'></Input>
-				<Input label='(MM/YY)'></Input>
+				<div className={classes['row-container']}>
+					<Input label='EXP DATE'></Input>
+					<Input label='(MM/YY)'></Input>
+				</div>
+
 				<Input label='CVC'></Input>
 			</div>
 			<Button></Button>
