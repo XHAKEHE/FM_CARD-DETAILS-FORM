@@ -4,7 +4,7 @@ const Input = (props) => {
 	return (
 		<div className={classes['col-container']}>
 			<label>{props.label}</label>
-			<input></input>
+			<input placeholder={props.placeholder}></input>
 		</div>
 	)
 }

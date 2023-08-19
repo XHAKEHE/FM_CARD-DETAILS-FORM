@@ -1,7 +1,7 @@
 .card-container {
 	position: relative;
 	top: 3rem;
-	height: 260px;
+	min-height: 260px;
 	width: 500px;
 	/* margin: 2rem; */
 }
@@ -17,8 +17,9 @@
 .card-back-cvc {
 	position: absolute;
 	top: 40%;
-	right: 12%;
-	font-size: 1.6rem;
+	right: 25%;
+	font-size: 1rem;
+	letter-spacing: 2px;
 }
 
 .card-front {
@@ -26,7 +27,7 @@
 	bottom: 0;
 	left: 0.4rem;
 	letter-spacing: 1px;
-	font-size: 1.6rem;
+	font-size: 1rem;
 }
 .card-front img {
 	width: 65%;
@@ -34,14 +35,14 @@
 
 .card-front-logo {
 	position: absolute;
-	top: 2rem;
-	left: 2rem;
+	top: 1rem;
+	left: 5rem;
 }
 
 .card-front-name {
 	position: absolute;
-	bottom: 1rem;
-	left: 1rem;
+	bottom: 1.4rem;
+	left: 6rem;
 }
 .card-front-number {
 	position: absolute;
@@ -50,12 +51,12 @@
 	bottom: 35%;
 	left: 50%;
 	transform: translate(-50%);
-	font-size: 2rem;
-	letter-spacing: 4px;
+	font-size: 1.4rem;
+	letter-spacing: 2px;
 }
 
 .card-front-date {
 	position: absolute;
-	bottom: 1rem;
-	right: 1rem;
+	bottom: 1.4rem;
+	right: 6rem;
 }

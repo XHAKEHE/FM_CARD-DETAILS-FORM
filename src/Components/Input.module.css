@@ -3,7 +3,7 @@
 	flex-direction: column;
 	width: 100%;
 	text-align: left;
-	margin: 0.6rem;
+	margin: 0.6rem 0;
 }
 
 .col-container input {
@@ -11,4 +11,10 @@
 	height: 3rem;
 	border-style: solid;
 	border-radius: 0.6rem;
+	padding-left: 1rem;
+	font-size: 1.2rem;
+
+}
+.col-container label {
+	white-space: nowrap;
 }

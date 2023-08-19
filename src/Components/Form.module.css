@@ -1,11 +1,15 @@
 .row-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: start;
-	align-items: start;
-	width: 100%;
-	font-size: 1rem;
-	letter-spacing: 3px;
+	justify-content: space-between;
+	font-size: 0.8rem;
+	letter-spacing: 2px;
 	font-weight: 600;
 }
 
+.full {
+	width: 100%;
+}
+.half {
+	width: 49%;
+}
