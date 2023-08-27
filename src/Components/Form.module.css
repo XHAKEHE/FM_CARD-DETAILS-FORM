@@ -13,3 +13,11 @@
 .half {
 	width: 49%;
 }
+
+.feedback{
+	font-size: 0.8rem;
+	color: rgb(201, 0, 0);
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0;
+}

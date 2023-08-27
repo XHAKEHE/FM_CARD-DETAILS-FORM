@@ -7,14 +7,22 @@
 }
 
 .col-container input {
-	margin: 0.4rem 0;
+	/* margin: 0.4rem 0; */
 	height: 3rem;
 	border-style: solid;
 	border-radius: 0.6rem;
 	padding-left: 1rem;
 	font-size: 1.2rem;
-
 }
 .col-container label {
 	white-space: nowrap;
+}
+
+.feedback {
+	font-size: 0.8rem;
+	color: rgb(201, 0, 0);
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0;
+	text-align: center;
 }

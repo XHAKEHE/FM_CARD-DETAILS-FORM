@@ -1,16 +1,22 @@
 import Input from './Input'
 import Button from './Button'
 import classes from './Form.module.css'
+import { useState } from 'react'
 
 const Form = () => {
+	const feedback = <p className={classes.feedback}>Wrong input</p>
+
 	return (
 		<form className='App-content'>
 			<div className={`${classes['row-container']} ${classes.full}`}>
 				<Input id='name' label='CARDHOLDER NAME' placeholder='e.g. Jane Appleseed'></Input>
 			</div>
+			{/* {feedback} */}
 			<div className={`${classes['row-container']} ${classes.full}`}>
 				<Input id='number' label='CARD NUMBER' maxLength='16' placeholder='e.g. 1234 5678 9012 3456'></Input>
 			</div>
+			{/* {feedback} */}
+
 			<div className={`${classes['row-container']} ${classes.full}`}>
 				<div className={`${classes['row-container']} ${classes.half}`}>
 					<div className={`${classes['row-container']} ${classes.half}`}>
@@ -24,6 +30,15 @@ const Form = () => {
 					<Input id='cvc' label='CVC' maxLength='3' placeholder='e.g. 123'></Input>
 				</div>
 			</div>
+
+			{/* <div className={`${classes['row-container']} ${classes.full}`}>
+				<div className={`${classes['row-container']} ${classes.half}`}>
+					<div className={`${classes['row-container']} ${classes.half}`}>{feedback}</div>
+					<div className={`${classes['row-container']} ${classes.half}`}>{feedback} </div>
+				</div>
+				<div className={`${classes['row-container']} ${classes.half}`}>{feedback} </div>
+			</div> */}
+
 			<Button></Button>
 		</form>
 	)
