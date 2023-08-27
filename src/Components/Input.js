@@ -5,30 +5,23 @@ const Input = props => {
 	const { inputData, setInputData } = useContext(inputContext)
 	const inputRef = useRef('')
 
-	let feedback = 'wrong whatever'
-	if (props.id === 'name') {
-		feedback = 'wrong name'
-	}
-	if (props.id === 'number') {
-		feedback = 'wrong number'
-	}
+	// console.log(props.errorFeedback)
 
 	const inputChangeHandler = e => {
 		// console.log(inputRef.current.value.length)
 
-		console.log(feedback)
 		switch (e.target.id) {
 			case 'name':
 				setInputData(prevState => ({ ...prevState, name: e.target.value }))
 				// console.log('Wpisano imię: ' + inputData.name)
-				if (e.target.value.length < 3 && inputRef.current !== 'now its ok' && inputRef.current !== 'wrong again :(') {
-					inputRef.current = 'correct the input'
-				} else {
-					inputRef.current = 'now its ok'
-				}
-				if (e.target.value.length < 3 && inputRef.current === 'now its ok') {
-					inputRef.current = 'wrong again :('
-				}
+				// if (e.target.value.length < 3 && inputRef.current !== 'now its ok' && inputRef.current !== 'wrong again :(') {
+				// 	inputRef.current = 'correct the input'
+				// } else {
+				// 	inputRef.current = 'now its ok'
+				// }
+				// if (e.target.value.length < 3 && inputRef.current === 'now its ok') {
+				// 	inputRef.current = 'wrong again :('
+				// }
 				console.log(inputRef.current)
 
 				break
@@ -64,7 +57,7 @@ const Input = props => {
 				placeholder={props.placeholder}
 				onChange={inputChangeHandler}
 			></input>
-			<p className={classes.feedback}>{feedback}</p>
+			<p className={classes.feedback}>{props.errorFeedback}</p>
 		</div>
 	)
 }
