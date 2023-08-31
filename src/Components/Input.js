@@ -13,16 +13,6 @@ const Input = props => {
 		switch (e.target.id) {
 			case 'name':
 				setInputData(prevState => ({ ...prevState, name: e.target.value }))
-				// console.log('Wpisano imię: ' + inputData.name)
-				// if (e.target.value.length < 3 && inputRef.current !== 'now its ok' && inputRef.current !== 'wrong again :(') {
-				// 	inputRef.current = 'correct the input'
-				// } else {
-				// 	inputRef.current = 'now its ok'
-				// }
-				// if (e.target.value.length < 3 && inputRef.current === 'now its ok') {
-				// 	inputRef.current = 'wrong again :('
-				// }
-				console.log(inputRef.current)
 
 				break
 			case 'number':

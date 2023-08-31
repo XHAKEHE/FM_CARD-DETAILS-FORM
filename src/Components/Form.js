@@ -1,25 +1,62 @@
+import { useContext, useState } from 'react'
 import Input from './Input'
 import Button from './Button'
+import inputContext from './input-context'
 import classes from './Form.module.css'
-import { useState } from 'react'
+import complete from '../images/icon-complete.svg'
+
 
 const Form = () => {
+	const ctx = useContext(inputContext)
 	const [feedback, setFeedback] = useState({ start: true })
-	const [formCompleted, setFormCompleted] = useState(false)
-	const onSubmitBtn = btnFeedback => {
-		setFeedback(btnFeedback)
-		if (Object.values(feedback).every(value => value === '')) {
-			setFormCompleted(true)
-		} else {
-			setFormCompleted(false)
+
+	const onSubmitBtn = e => {
+		e.preventDefault()
+
+		setFeedback({ name: '', number: '', dateMonth: '', dateYear: '', cvc: '' })
+
+		if (ctx.inputData.name.length === 0) {
+			setFeedback(prevState => ({ ...prevState, name: 'Cannot be empty!' }))
 		}
-		// console.log(feedback)
+
+		const regex = /[a-zA-Z]/
+		if (ctx.inputData.number.length < 16) {
+			setFeedback(prevState => ({ ...prevState, number: 'Not enough digits for a card number!' }))
+		} else {
+			if (regex.test(ctx.inputData.number)) {
+				setFeedback(prevState => ({ ...prevState, number: 'Invalid characters in your number!' }))
+			}
+		}
+
+		if (Number(ctx.inputData.dateMonth) > 12 || ctx.inputData.dateMonth.length < 2) {
+			setFeedback(prevState => ({ ...prevState, dateMonth: 'Invalid month!' }))
+		}
+		if (ctx.inputData.dateYear.length < 2) {
+			setFeedback(prevState => ({ ...prevState, dateYear: 'Invalid year!' }))
+		}
+
+		if (ctx.inputData.cvc.length < 3) {
+			setFeedback(prevState => ({ ...prevState, cvc: 'Invalid CVC!' }))
+		}
 	}
-	console.log(formCompleted)
+
+	const formCompletion = () => {
+		if (Object.values(feedback).every(value => value === '')) {
+			return true
+		} else {
+			return false
+		}
+	}
 
 	const content = () => {
-		if (formCompleted) {
-			return <p>siemanko</p>
+		if (formCompletion()) {
+			return (
+				<div className='App-content'>
+					<img src={complete}></img>
+					<h1>Thank you!</h1>
+					<p>We've added your caard details</p>{' '}
+				</div>
+			)
 		} else {
 			return (
 				<form className='App-content'>
@@ -67,7 +104,7 @@ const Form = () => {
 						</div>
 					</div>
 
-					<Button onSubmit={onSubmitBtn}></Button>
+					<Button text={'Confirm'} onSubmit={onSubmitBtn}></Button>
 				</form>
 			)
 		}
